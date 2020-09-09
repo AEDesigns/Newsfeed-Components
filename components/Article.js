@@ -131,7 +131,6 @@ function articleMaker(article){
   const spanBtn = document.createElement('span')
 
   title.textContent = article.title;
-// passed in va
   date.textContent = article.date;
   para1.textContent =article.firstParagraph
   para2.textContent =article.firstParagraph
@@ -150,13 +149,31 @@ function articleMaker(article){
   date.classList.add('date')
   spanBtn.classList.add('expandButton')
 
-  spanBtn.addEventListener('click', (event) =>{
+  spanBtn.addEventListener('click', e =>{
     articleHolder.classList.toggle('article-open')
   });
 
   return articleHolder
   }
 
- data.forEach(articless => {
- articles.appendChild(articleMaker(articless))
+  data.push(  
+    {
+    title: '2020 Sucks, A Thread',
+    date: 'September 8, 2020',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  })
+
+ data.forEach(item => {
+ articles.appendChild(articleMaker(item))
  });
